@@ -8,3 +8,9 @@ const ksidebarstyle=TextStyle(
   color:Colors.black,
   fontFamily: "Oswald-SemiBold.tff",
 );
+const kdescribestyle=TextStyle(
+  fontSize:25,
+  fontWeight:FontWeight.bold,
+  color:Colors.black,
+  fontFamily: "Oswald-Regular.tff",
+);

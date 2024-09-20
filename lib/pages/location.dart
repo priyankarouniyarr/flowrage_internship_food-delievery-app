@@ -44,7 +44,7 @@ class _Screen2State extends State<Screen2> {
                       decoration: InputDecoration(
                         prefixIcon: Icon(
                           Icons.location_on_outlined,
-                          color: Color.fromRGBO(225, 174, 24, 1),
+                          color: const Color.fromRGBO(255, 172, 22, 1),
                         ),
                         hintText: 'Standort',
                         border: OutlineInputBorder(

@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:fooddeliveryapp/constants/constants.dart';
+import 'package:fooddeliveryapp/pages/appbarscreen.dart';
 import 'package:fooddeliveryapp/pages/sidebar.dart';
 
 class Homepage extends StatefulWidget {
@@ -11,71 +13,53 @@ class Homepage extends StatefulWidget {
 class _HomepageState extends State<Homepage> {
   @override
   Widget build(BuildContext context) {
+    
+    final screenWidth = MediaQuery.of(context).size.width;
+    final screenHeight = MediaQuery.of(context).size.height;
+
     return SafeArea(
       child: Scaffold(
         backgroundColor: Colors.white,
         drawer: Sidebar(),
         appBar: AppBar(
-          backgroundColor: Color.fromRGBO(255, 172, 22, 1),
-           // AppBar background color
-          actions: [
-            // Logo Image
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: Image.asset(
-                'images/logoname.jpeg',
-                
-                 // Ensure the image path is correct
-                height: 40, 
-                
-                // Adjust height as needed
-                width: 40,
-                
-                 // Adjust width as needed
-                fit: BoxFit.contain,
-                
+          backgroundColor: const Color.fromRGBO(255, 172, 22, 1),
+          iconTheme: const IconThemeData(
+            color: Colors.white,
+            size: 30,
+          ),
+          title: Appbar(),
+        ),
+        body: Stack(
+          alignment: Alignment.topLeft,
+          children: [
+            
+            Positioned(
+              top: 0,
+              child: Image.network(
+                'https://img.freepik.com/free-photo/top-view-pepperoni-pizza-with-mushroom-sausages-bell-pepper-olive-corn-black-wooden_141793-2158.jpg',
+                width: screenWidth, 
+                height: screenHeight * 0.3, //30% of the screen height
+                fit: BoxFit.cover,
               ),
             ),
-                // Location Icon
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: IconButton(
-                icon: Icon(
-                   Icons.location_on_outlined,
-                   color: Color.fromRGBO(225, 174, 24, 1),
-                   // Color for location icon
-                
+            
+            Positioned(
+              top: screenHeight * 0.25, 
+              left: screenWidth * 0.08, 
+              child: CircleAvatar(
+                radius: 50,
+                backgroundColor: Colors.grey[200],
+                child: Image.asset(
+                  'images/pizza1.jpg',
+                  width: screenWidth * 0.2,
+                  fit: BoxFit.contain,
                 ),
-                onPressed: () {
-                   // Action for location icon
-                },
               ),
             ),
 
             
-           
-            
-            // Add to Cart Icon
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 8.0),
-              child: IconButton(
-                icon: Icon(
-                  Icons.shopping_cart, 
-                  color: Colors.white, 
-              
-                
-                  // Color for cart icon
-
-                ),
-                onPressed: () {
-
-                  // Action for cart icon
-                },
-              ),
-            ),
           ],
+          
         ),
       ),
     );
