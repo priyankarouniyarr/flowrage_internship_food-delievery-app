@@ -13,13 +13,13 @@ class _Screen1State extends State<Screen1> {
   void initState() {
     super.initState();
     
-    // Delay of 5 seconds 
-    Future.delayed(Duration(seconds: 5), () {
-      Navigator.pushReplacement(
-        context,
-        MaterialPageRoute(builder: (context) => Screen2()),
-      );
-    });
+   // Delay of 5 seconds 
+   Future.delayed(Duration(seconds: 5), () {
+     Navigator.pushReplacement(
+       context,
+       MaterialPageRoute(builder: (context) => Screen2()),
+     );
+   });
   }
 
   @override
@@ -32,12 +32,16 @@ class _Screen1State extends State<Screen1> {
             mainAxisAlignment: MainAxisAlignment.center,
             crossAxisAlignment: CrossAxisAlignment.center, 
             children: [
-              // Image.asset('path_to_your_image'),
+               Image.asset('images/logo/logo.png', width:MediaQuery.of(context).size.width/2.5,
+                        fit: BoxFit.contain,),
+                        SizedBox(
+                          height: 15,
+                        ),
               Text(
                 'Lieferservice',
                 style: TextStyle(
                   color: Color.fromRGBO(255, 172, 22, 1),
-                  fontSize: 50,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   height: 1.0,
                 ),
@@ -47,7 +51,7 @@ class _Screen1State extends State<Screen1> {
                 'Magdeburg',
                 style: TextStyle(
                   color: Color.fromRGBO(255, 172, 22, 1),
-                  fontSize: 50,
+                  fontSize: 40,
                   fontWeight: FontWeight.bold,
                   height: 1.0,
                 ),

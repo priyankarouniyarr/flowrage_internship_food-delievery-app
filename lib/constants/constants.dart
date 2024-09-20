@@ -12,5 +12,5 @@ const kdescribestyle=TextStyle(
   fontSize:25,
   fontWeight:FontWeight.bold,
   color:Colors.black,
-  fontFamily: "Oswald-Regular.tff",
+  fontFamily: "Oswald-Bold.tff",
 );
